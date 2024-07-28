@@ -23,5 +23,8 @@ from config import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
+    path('course/', include('course.urls')),
+    path('teacher/', include('teacher.urls')),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
