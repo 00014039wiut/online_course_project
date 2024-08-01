@@ -9,8 +9,9 @@ urlpatterns = [
     path('blog/<int:pk>/add_comment/', CommentBlogView.as_view(), name='add-comment'),
     path('contact/', contact_page, name='contact'),
     path('blog-list/', BlogListView.as_view(), name='blog-list'),
-    path('login-page/', login_page, name='login-page'),
-    path('register-page/', register_page, name='register-page'),
+    path('login-page/', LoginPage.as_view(), name='login'),
+    path('logout-page/', logout_page, name='logout'),
+    path('register-page/', RegisterFormView.as_view(), name='register'),
 
 
 ]
