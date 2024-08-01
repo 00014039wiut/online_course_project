@@ -6,8 +6,10 @@ from config import settings
 from course.views import *
 
 urlpatterns = [
-    path('course-list/', course_list, name='course-list'),
-    path('about-page/', about_page, name='about-page'),
+    path('course-list/', CourseListView.as_view(), name='course-list'),
+    path('course-detail/<int:course_id>/', course_detail, name='course-detail'),
+    path('about-page/', AboutView.as_view(), name='about-page'),
+
 
 
 ]

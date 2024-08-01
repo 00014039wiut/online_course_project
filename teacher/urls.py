@@ -1,12 +1,10 @@
-from django.conf.urls.static import static
-from django.contrib import admin
 from django.urls import path, include
 
 from config import settings
-from teacher.views import teacher_list
+from teacher.views import teacher_list, TeacherDetailView, TeacherListView
 
 urlpatterns = [
-    path('teacher-list/', teacher_list, name='teacher-list'),
-
+    path('teacher-list/', TeacherListView.as_view(), name='teacher-list'),
+    path('teacher-detail/<int:pk>/', TeacherDetailView.as_view(), name='teacher-detail'),
 
 ]

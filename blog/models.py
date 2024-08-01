@@ -7,7 +7,7 @@ from django.db import models
 # Create your models here.
 class Author(models.Model):
     full_name = models.CharField(max_length=100)
-    age = models.IntegerField()
+
     education = models.CharField(max_length=100)
     image = models.ImageField(upload_to='images/authors')
 
@@ -28,7 +28,7 @@ class Blog(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=datetime.now())
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    images = models.ManyToManyField(Photo)
+    images = models.ForeignKey(Photo, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
@@ -36,10 +36,11 @@ class Blog(models.Model):
 
 class Comment(models.Model):
     name = models.CharField(max_length=100)
-    body = models.TextField()
-    sender_name = models.CharField(max_length=100)
-    sender_email = models.EmailField()
-    file_field = models.FileField(upload_to='blogs', null=True, blank=True)
+    email = models.EmailField()
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    content = models.TextField()
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    date_posted = models.DateTimeField(default=datetime.now())
 
     def __str__(self):
         return self.name

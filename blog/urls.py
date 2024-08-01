@@ -4,10 +4,13 @@ from django.urls import path
 from blog.views import *
 
 urlpatterns = [
-    path('home/', index, name='home'),
-    path('blog-detail/', blog_detail, name='blog-detail'),
+    path('home/', HomePageView.as_view(), name='home'),
+    path('blog-detail/<int:pk>/', BlogDetailView.as_view(), name='blog-detail'),
+    path('blog/<int:pk>/add_comment/', CommentBlogView.as_view(), name='add-comment'),
     path('contact/', contact_page, name='contact'),
-    path('blog-list/', blog_list, name='blog-list'),
+    path('blog-list/', BlogListView.as_view(), name='blog-list'),
+    path('login-page/', login_page, name='login-page'),
+    path('register-page/', register_page, name='register-page'),
 
 
 ]

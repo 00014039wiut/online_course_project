@@ -9,6 +9,7 @@ from teacher.models import Teacher
 
 class Category(models.Model):
     title = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='images/category')
 
     class Meta:
         verbose_name_plural = "Categories"
@@ -21,6 +22,7 @@ class Course(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
     number_of_students = models.IntegerField(default=0)
+    rating = models.IntegerField(default=0)
     price = models.FloatField()
     duration = models.IntegerField()
     teachers = models.ForeignKey(Teacher, on_delete=models.CASCADE)
@@ -54,6 +56,8 @@ class Comment(models.Model):
     comment = models.TextField()
     is_published = models.BooleanField(default=False)
     rating = models.CharField(max_length=100, choices=RatingChoices.choices, default=RatingChoices.Zero.value)
-    course_id = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='comments')
-    blog_id = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name='comments')
+    course_id = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='comments' , null=True, blank=True)
+    blog_id = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name='comments' , null=True, blank=True)
     author_id = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='comments')
+    def __str__(self):
+        return self.name

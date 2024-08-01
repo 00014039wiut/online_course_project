@@ -1,0 +1,144 @@
+/*Suraj Aswal*/
+
+*{
+    margin:0px;
+    padding:0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+.main-wrap{
+    position: relative;
+    width: 100%;
+}
+.form-wrap{
+    margin:auto;
+    margin-top:5%;
+    border-radius: 11px;
+    padding:80px 25px;
+    background-color: rgba(16, 15, 27, 0.952);
+    width:350px;
+    height:auto;
+    /* box-shadow: 0.1rem 3rem rgba(0, 0, 0, 0.527) !important; */
+}
+.form-wrap h1{
+    color: rgb(238, 237, 237);
+}
+.form-wrap h6{
+    color:rgb(212, 211, 211);
+    font-size:14px;
+    margin-bottom:20px;
+}
+.form-wrap span{
+    color:rgb(23, 206, 212);
+}
+.form input{
+    margin:8px 0px;
+    height:30px;
+    width:100%;
+    border:none;
+    border-radius: 20px;
+    padding-left:14px;
+    color:rgb(238, 237, 237);
+    background-color: rgb(7, 6, 10);
+}
+.form input:focus{
+    border:none;
+    outline:none
+}
+.form input::placeholder{
+    padding-left: 4px;
+}
+.form .form-btn{
+    width:100px;
+    border-radius:20px;
+    padding:5px;
+    cursor:pointer;
+    font-weight:550;
+    margin-top:16px;
+    border:0.1rem solid rgb(35, 215, 221);
+    color:rgb(35, 215, 221);
+    background-color: transparent;
+}
+.form-btn:hover{
+    background-color: rgb(17, 16, 29);
+}
+.sign-up-with{
+    padding:40px 10px;
+    width:100%;
+    display:inline-block;
+    text-align:center;
+    color:rgb(206, 202, 202) !important;
+}
+.social-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-logo a{
+    background-color: #fff;
+    width:30px;
+    height:30px;
+    margin:2px 25px;
+    padding:5px;
+    border-radius:20px;
+}
+.social-logo a img{
+    height:20px;
+    width:20px;
+}
+.card-footer {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 10px 0; /* Vertical padding */
+}
+
+.btn-falcon-default {
+    background-color: #fff; /* White background for buttons */
+    border: 1px solid #dee2e6; /* Light gray border */
+    color: #6c757d; /* Gray text color */
+}
+
+.btn-falcon-default:hover,
+.btn-falcon-default:focus {
+    background-color: #e9ecef; /* Light gray background on hover */
+    color: #495057; /* Darker gray text color */
+}
+
+.btn-falcon-default.active,
+.btn-falcon-default.text-primary {
+    background-color: #007bff; /* Primary color background */
+    border-color: #007bff; /* Primary color border */
+    color: #fff; /* White text color */
+}
+
+.btn-falcon-default:disabled {
+    background-color: #e9ecef; /* Light gray background */
+    border-color: #e9ecef; /* Light gray border */
+    color: #adb5bd; /* Light gray text color */
+}
+
+a.btn-falcon-default {
+    text-decoration: none; /* Remove underline from links */
+}
+
+a.btn-falcon-default:hover {
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.card-footer .btn {
+    margin: 0 5px; /* Horizontal spacing between buttons */
+}
+
+.card-footer .btn span.fas {
+    font-size: 12px; /* Font size for icons */
+}
+
+/* Tooltip styling */
+.tooltip-inner {
+    background-color: #343a40; /* Dark background for tooltip */
+    color: #fff; /* White text color */
+}
+
+.tooltip-arrow {
+    border-top-color: #343a40; /* Dark border for tooltip arrow */
+    border-bottom-color: #343a40;
+}
